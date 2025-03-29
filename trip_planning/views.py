@@ -7,6 +7,9 @@ from rest_framework.views import APIView
 import googlemaps
 from .models import Trip, ELDLog, RouteStop
 from .serializers import TripSerializer, ELDLogSerializer, RouteStopSerializer, TripPlanningSerializer
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 class TripPlanningView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -14,7 +17,7 @@ class TripPlanningView(APIView):
     def post(self, request):
         serializer = TripPlanningSerializer(data=request.data)
         if serializer.is_valid():
-            gmaps = googlemaps.Client(key='AIzaSyDn8duOeHMr3uVaSX4Qh6LVyiNbB_P8-HA')
+            gmaps = googlemaps.Client(key=os.getenv('GOOGLEMAP_API'))
             
             # Calculate route with pickup as waypoint
             directions = gmaps.directions(

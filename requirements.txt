@@ -1,0 +1,21 @@
+# Backend Requirements
+# Django==4.2.3
+djangorestframework
+djoser
+django-cors-headers
+
+# Geospatial and Routing
+googlemaps
+geopy
+
+# Authentication
+PyJWT
+
+# # Optional but recommended
+# celery==5.3.0  # For background tasks
+# redis==4.5.4  # Celery broker
+# psycopg2-binary==2.9.6  # PostgreSQL adapter
+
+# Development and Testing
+pytest
+coverage

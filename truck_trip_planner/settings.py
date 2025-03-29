@@ -88,7 +88,8 @@ DATABASES = {
 #CORS SETTINGS
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React development server
+    "http://localhost:5173",
+    "https://truck-pro.vercel.app"
 ]
 
 CORS_ALLOW_METHODS = [

@@ -8,6 +8,6 @@ router = DefaultRouter()
 router.register(r'', TripViewSet, basename='trip')
 
 urlpatterns = [
-   path('',include(router.urls)),
    path('plan-trip/', TripPlanningView.as_view(), name='trip-planning'),
+   path('',include(router.urls)),
 ]

@@ -1,14 +1,14 @@
+import os
 from datetime import timedelta
 from django.utils import timezone 
 from rest_framework import permissions, status,viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from dotenv import load_dotenv
 import googlemaps
 from .models import Trip, ELDLog, RouteStop
 from .serializers import TripSerializer, ELDLogSerializer, RouteStopSerializer, TripPlanningSerializer
-from dotenv import load_dotenv
-import os
 load_dotenv()
 
 class TripPlanningView(APIView):

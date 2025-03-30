@@ -94,7 +94,7 @@ DATABASES = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:51734",
-    "https://truck-pro.onrender.com"
+    "https://truck-pro-driver.vercel.app"
 ]
 
 CORS_ALLOW_METHODS = [

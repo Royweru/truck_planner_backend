@@ -6,7 +6,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         write_only=True, 
         required=True, 
         style={'input_type': 'password'},
-        validators=[]  # You can add custom password validators here if needed
+        validators=[]  
     )
     confirm_password = serializers.CharField(
         write_only=True, 
@@ -34,7 +34,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
                 {"password": "Password fields didn't match."}
             )
         
-        # Optional: Add additional validation
+        
         if not attrs.get('email'):
             raise serializers.ValidationError(
                 {"email": "Email is required."}
@@ -43,7 +43,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         return attrs
     
     def create(self, validated_data):
-        # Create user using create_user method to properly hash password
+        
         user = User.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],

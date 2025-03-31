@@ -31,7 +31,7 @@ class TripSerializer(serializers.ModelSerializer):
         read_only_fields = ['driver', 'start_time', 'end_time', 'total_distance', 'estimated_arrival']
     
     def create(self, validated_data):
-        # Ensure the trip is associated with the current user
+       
         driver = self.context['request'].user
         trip = Trip.objects.create(driver=driver, **validated_data)
         return trip
